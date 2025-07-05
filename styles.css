@@ -1,0 +1,331 @@
+/* Fonte importada do google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* Definindo cores padrão do site para facilitar a manutenção */
+
+:root {
+    --cor-de-fundo: #fff;
+    --cor-de-texto: #000;
+    --cor-de-principal: #F3D8C7;
+    --cor-hover: rgba(255, 255, 255, 0.2);
+    --sombra-padrao: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --transicao-padrao: 0.3s ease;
+}
+
+/* Remove margens e padding padrão e define a fonte para todos os elementos */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Mono", monospace;
+}
+
+
+/* Define o layout principal da página */
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-de-texto);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container que envolve todo o conteúdo da página */
+
+.container-principal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Cabeçalho e menu de navegação */
+
+.cabecalho {
+    background-color: var(--cor-de-principal);
+    padding: 1rem 0;
+    box-shadow: var(--sombra-padrao);
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Lista do menu - remove o estilo padrão e organiza horizontalmente */
+
+.lista-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* Links do menu com hover effect */
+
+.lista-menu li a {
+    color: var(--cor-de-texto);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color var(--transicao-padrao);
+}
+
+.lista-menu li a:hover {
+    background-color: var(--cor-hover);
+}
+
+/* Estilos base para todas as seções de conteúdo */
+
+.sobre-mim,
+.formacao,
+.portfolio,
+.contato {
+    flex: 1;
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Títulos principais de cada página */
+
+.titulo-sobre-mim,
+.titulo-formacao,
+.titulo-portfolio,
+.titulo-contato {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--cor-de-texto);
+}
+
+/* Estilizando a página sobre mim */
+
+.container-sobre-mim {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.paragrafo-sobre-mim {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+/* Estilizando a página de formação */
+
+.container-formacao {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Cards de formação */
+
+.primeira-formacao,
+.segunda-formacao {
+    background-color: var(--cor-de-principal);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--sombra-padrao);
+    text-align: center;
+    transition: transform var(--transicao-padrao);
+}
+
+.primeira-formacao:hover,
+.segunda-formacao:hover {
+    transform: translateY(-5px); /* Efeito de elevação no hover */
+}
+
+.imagem-formacao {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px dashed rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+}
+
+.paragrafo-formacao {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* Estilizando a página de portfólio */
+
+.container-portfolio {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.subtitulo-portfolio {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--cor-de-texto);
+}
+
+/* Grid dos projetos */
+
+.container-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Cards dos projetos */
+
+.primeiro-projeto,
+.segundo-projeto,
+.terceiro-projeto {
+    background-color: var(--cor-de-principal);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--sombra-padrao);
+    transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
+}
+
+.primeiro-projeto:hover,
+.segundo-projeto:hover,
+.terceiro-projeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.titulo-projeto {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--cor-de-texto);
+}
+
+.paregrafo-projeto {
+    margin-bottom: 1rem;
+    color: var(--cor-de-texto);
+    font-size: 0.9rem;
+}
+
+.link-projeto {
+    display: block;
+    text-decoration: none;
+}
+
+.imagem-projeto {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px dashed rgba(0, 0, 0, 0.3);
+}
+
+/* Estilizando a página contato */
+
+.container-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Formulário de contato */
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--cor-de-principal);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--sombra-padrao);
+}
+
+/* Campos de input do formulário */
+
+.formulario-input {
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--cor-de-fundo);
+    transition: border-color var(--transicao-padrao);
+}
+
+.formulario-input:focus {
+    outline: none;
+    border-color: var(--cor-de-texto);
+}
+
+/* Estilzando o textarea do formulario */
+
+.formulario-text {
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--cor-de-fundo);
+    min-height: 120px;
+    resize: vertical;
+    transition: border-color var(--transicao-padrao);
+}
+
+.formulario-text:focus {
+    outline: none;
+    border-color: var(--cor-de-texto);
+}
+
+/* Botão de envio do formulário */
+
+.formulario button {
+    padding: 1rem 2rem;
+    background-color: var(--cor-de-texto);
+    color: var(--cor-de-fundo);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transicao-padrao), transform var(--transicao-padrao);
+}
+
+.formulario button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px);
+}
+
+/* Estilizando o rodapé */
+
+.rodape {
+    background-color: var(--cor-de-principal);
+    padding: 1.5rem 0;
+    text-align: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.rodape p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    color: var(--cor-de-texto);
+}
